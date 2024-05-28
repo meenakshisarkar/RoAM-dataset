@@ -10,6 +10,7 @@ def parse_tfrecord_fn(example):
     example = tf.io.parse_single_example(example, feature_description)
     image = tf.io.parse_tensor(example['image_left'], out_type=tf.float32)
     action = tf.io.parse_tensor(example['action'], out_type=tf.float32)
+    folder_name = tf.io.parse_tensor(example['folder_name'], out_type=tf.string)
     return image, action
 
 class Builder(tfds.core.GeneratorBasedBuilder):
@@ -26,13 +27,14 @@ class Builder(tfds.core.GeneratorBasedBuilder):
     return self.dataset_info_from_configs(
         features=tfds.features.FeaturesDict({
             # These are the features of your dataset like video, labels ...
-            'video': tfds.features.Tensor(shape=(40, 64, 64, 3),dtype = tf.float32),
-            'action': tfds.features.Tensor(shape=(40, 1, 2), dtype = tf.float32),
+            'video': tfds.features.Tensor(shape=(25, 64, 64, 3),dtype = tf.uint8),
+            'action': tfds.features.Tensor(shape=(25, 1, 2), dtype = tf.float32),
+            'folder_name': tfds.features.Tensor(shape=(), dtype = tf.string)
         }),
         # If there's a common (input, target) tuple from the
         # features, specify them here. They'll be used if
         # `as_supervised=True` in `builder.as_dataset`.
-        supervised_keys=('video', 'action'),  # Set to `None` to disable
+        supervised_keys=('video', 'action','folder_name'),  # Set to `None` to disable
         homepage='https://meenakshisarkar.github.io/Motion-Prediction-and-Planning/dataset/',
     )
 
@@ -57,9 +59,10 @@ class Builder(tfds.core.GeneratorBasedBuilder):
 
       # Map the parsing function over the dataset
       parsed_dataset = dataset.map(parse_tfrecord_fn)
-      for video, action in parsed_dataset:
+      for video, action, folder_name in parsed_dataset:
         yield index, {
           'video' : video.numpy(),
-          'action' : action.numpy()
+          'action' : action.numpy(),
+          'folder_name': folder_name.numpy()
         }
         index += 1
