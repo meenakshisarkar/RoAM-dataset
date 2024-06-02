@@ -10,9 +10,13 @@ from PIL import Image
 from os.path import exists
 from os import makedirs
 from tqdm import trange
+
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 TOTAL_SEQ=1024
-SEQ_NO=300
-LEN=25
+SEQ_NO=1
+# LEN=25 #for training
+LEN=40 #for testing
 SEED=77
 V_MAX=0.1
 Turn_MAX=1.8
@@ -58,7 +62,7 @@ def tf_serialize(f0,f1):
 
 
 # datapath="../../../catkin_ws/RoAM_dataset/processed/train"
-datapath="../../../catkin_ws/RoAM_dataset/processed/train"
+datapath="../../../catkin_ws/RoAM_dataset/processed/test"
 # file_path= "/date_2023_03_10/corridor_lab2"
 # path=datapath+file_path
 # print(path)
@@ -66,7 +70,7 @@ datapath="../../../catkin_ws/RoAM_dataset/processed/train"
 # action_path=os.path.join(path,"Rosbag_0002")
 # print(action_path)
 
-tf_dir=datapath+'/../tfrecord'
+tf_dir=datapath+'/../tfrecord_test'
 if not exists(tf_dir):
         makedirs(tf_dir)
 
