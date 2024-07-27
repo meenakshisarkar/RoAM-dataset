@@ -40,6 +40,17 @@ tfds build roam
 
 ## Citation
 ```bibtex
+@article{leap2024,
+      title={Video Generation with Learned Action Prior}, 
+      author={Meenakshi Sarkar and Devansh Bhardwaj and Debasish Ghose},
+      year={2024},
+      eprint={2406.14436},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2406.14436}, 
+}
+```
+```bibtex
 @InProceedings{acpnet2023,
   author={Sarkar, Meenakshi and Honkote, Vinayak and Das, Dibyendu and Ghose, Debasish},
   booktitle={2023 32nd IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)}, 
