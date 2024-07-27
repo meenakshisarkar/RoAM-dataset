@@ -128,9 +128,9 @@ if __name__ == "__main__":
     parser.add_argument("--len", type=int, dest="LEN",
                         default=25, help="Total lenght of image sequence sample for training and testing. During training we kept it as 25 and training it is 40")
     parser.add_argument("--seq_no", type=int, dest="SEQ_NO",
-                        default=2, help="Total no of sampling sequence")
+                        default=300, help="Total no of sampling sequence")
     parser.add_argument("--vid_no", type=int, dest="VIDEO_NO",
-                        default=10, help="Total no of video snippets of length LEN in each sequence of tfrecord file")
+                        default=1024, help="Total no of video snippets of length LEN in each sequence of tfrecord file")
     args = parser.parse_args()
     main(**vars(args))
 
