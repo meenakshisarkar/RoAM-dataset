@@ -1,3 +1,6 @@
+layout: page
+title: ROAM Dataset
+description: Robot Autonomous Motion Dataset
 # About
 ![**Turtlebot3**](https://github.com/meenakshisarkar/Motion-Prediction-and-Planning/blob/updated/images/fig_roman_burger_mod.png){:height="150" width="300"} ![RoAM Collection Process](https://github.com/meenakshisarkar/Motion-Prediction-and-Planning/blob/updated/images/fig_roman_intro_mod.jpg){:height="250" width="250"}
 <!---[edit my file](/images/fig_roman_burger_mod.png){: .center-image }
