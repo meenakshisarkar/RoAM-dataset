@@ -1,19 +1,12 @@
-<style>
-body {
-    background-color: white;
-    color: black;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    padding: 20px;
-}
-</style>
-
-title: ROAM Dataset
-description: Robot Autonomous Motion Dataset
 # About
-![**Turtlebot3**](https://github.com/meenakshisarkar/Motion-Prediction-and-Planning/blob/updated/images/fig_roman_burger_mod.png){:height="150" width="300"} ![RoAM Collection Process](https://github.com/meenakshisarkar/Motion-Prediction-and-Planning/blob/updated/images/fig_roman_intro_mod.jpg){:height="250" width="250"}
+<p align="center">
+  <img src="https://github.com/meenakshisarkar/Motion-Prediction-and-Planning/blob/updated/images/fig_roman_burger_mod.png" width="45%" />
+  <img src="https://github.com/meenakshisarkar/Motion-Prediction-and-Planning/blob/updated/images/fig_roman_intro_mod.jpg" width="45%" />
+</p>
+
+<!-- ![**Turtlebot3**](https://github.com/meenakshisarkar/Motion-Prediction-and-Planning/blob/updated/images/fig_roman_burger_mod.png){:height="150" width="300"} ![RoAM Collection Process](https://github.com/meenakshisarkar/Motion-Prediction-and-Planning/blob/updated/images/fig_roman_intro_mod.jpg){:height="250" width="250"}
 <!---[edit my file](/images/fig_roman_burger_mod.png){: .center-image }
-*Turtlebot3* --->
+*Turtlebot3* ---> -->
 
 We introduce **Robot Autonomous Motion (RoAM)**, a unique video-action dataset that includes 50 long video sequences collected over 7 days at 14 different indoor spaces, capturing various indoor human activities from the ego-motion perspective of the Turtlebot3 robot. Along with the stereo image sequences, RoAM also contains time-stamped robot action sequences that are synchronised with the video data. The dataset primarily includes a range of human movements, such as walking, jogging, hand-waving, gestures, and sitting actions, which an indoor robot might encounter while navigating environments populated by people. Each of the 50 recorded video sequences, is started with unique initial conditions such that there is sufficient diversity and variations in the dataset. The dataset pre-dominantly records human walking motion while the robot slowly explores its surroundings. 
 <!---The dataset also includes synchronized records of the LiDAR scan and all control actions taken by the robot as it navigates around static and moving human agents. The unique dataset provides an opportunity to develop and benchmark new visual prediction frameworks that can predict future image frames based on the action taken by the recording agent in partially observable scenarios or cases where the imaging sensor is mounted on a moving platform. --->
