@@ -1,4 +1,4 @@
-# About
+# Robot Autonomous Motion (RoAM) Dataset
 <p align="center">
   <img src="https://github.com/meenakshisarkar/Motion-Prediction-and-Planning/blob/updated/images/fig_roman_burger_mod.png" width="45%" />
   <img src="https://github.com/meenakshisarkar/Motion-Prediction-and-Planning/blob/updated/images/fig_roman_intro_mod.jpg" width="40%" />
