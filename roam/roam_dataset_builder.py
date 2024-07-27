@@ -1,7 +1,9 @@
 import tensorflow_datasets as tfds
 import tensorflow as tf
 import os
-LEN=40
+local_dir = os.path.dirname(os.path.realpath(__file__))
+
+
 def parse_tfrecord_fn(example):
     feature_description = {
         'image_left': tf.io.FixedLenFeature([], tf.string),
@@ -28,8 +30,8 @@ class Builder(tfds.core.GeneratorBasedBuilder):
     return self.dataset_info_from_configs(
         features=tfds.features.FeaturesDict({
             # These are the features of your dataset like video, labels ...
-            'video': tfds.features.Tensor(shape=(LEN, 64, 64, 4),dtype = tf.uint8),
-            'action': tfds.features.Tensor(shape=(LEN, 1, 2), dtype = tf.float32),
+            'video': tfds.features.Tensor(shape=(25, 64, 64, 4),dtype = tf.uint8),
+            'action': tfds.features.Tensor(shape=(25, 1, 2), dtype = tf.float32),
             'folder_name': tfds.features.Tensor(shape=(), dtype = tf.string)
         }),
         # If there's a common (input, target) tuple from the
@@ -42,13 +44,13 @@ class Builder(tfds.core.GeneratorBasedBuilder):
   def _split_generators(self, dl_manager: tfds.download.DownloadManager):
     """Returns SplitGenerators."""
     # TODO(my_data): Downloads the data and defines the splits
-    # path = '../train/tfrecord/'
-    test_path = '../tfrecord_test/'
+    train_path = '../data/tfds_samples/train_tfrecords'
+    # test_path = '../data/tfds_samples/test_tfrecords'
 
     # TODO(my_data): Returns the Dict[split names, Iterator[Key, Example]]
     return {
-        # 'train': self._generate_examples(path),
-        'test': self._generate_examples(test_path),
+        'train': self._generate_examples(train_path),
+        # 'test': self._generate_examples(test_path),
     }
 
   def _generate_examples(self, dir_path):
